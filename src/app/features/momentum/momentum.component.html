@@ -1,0 +1,21 @@
+<div class="background" style="background-image: url({{bgURL}})">
+  <div class="header">
+    <app-music></app-music>
+    <app-weather></app-weather>
+  </div>
+  <div class="main">
+    <app-time [now]="now"></app-time>
+    <app-greeting [now]="now"></app-greeting>
+  </div>
+  <div class="footer">
+    <app-quotes></app-quotes>
+  </div>
+  <div class="arrows">
+    <div (click)="previous()">
+      <fa-icon [icon]="faAngleLeft"></fa-icon>
+    </div>
+    <div (click)="next()">
+      <fa-icon [icon]="faAngleRight"></fa-icon>
+    </div>
+  </div>
+</div>

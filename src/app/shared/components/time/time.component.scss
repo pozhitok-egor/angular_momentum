@@ -1,0 +1,13 @@
+.time {
+  font-size: 7.2rem;
+  font-family: "Roboto";
+  font-weight: bold;
+  width: 400px;
+  @media screen and (min-width: 500px) {
+    font-size: 9.2rem;
+  }
+}
+
+:host {
+  text-align: center;
+}

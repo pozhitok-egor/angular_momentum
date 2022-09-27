@@ -1,0 +1,8 @@
+<div>{{ greeting }},</div>
+<input
+  type="text"
+  [value]="name || ''"
+  (input)="changeName($event)"
+  [style]="{ width: name.length > 0 ? name.length + 'ch' : '12ch' }"
+  placeholder="[Enter name]"
+/>

@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  white-space: nowrap;
+  & input {
+    background: transparent;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+    border: none;
+    width: 12ch;
+  }
+}

@@ -1,0 +1,15 @@
+<input type="text" placeholder="[City]" [defaultValue]="city" (change)="changeCity($event)" />
+<div class="data" *ngIf="weatherData">
+  <div class="header">
+    <img src="http://openweathermap.org/img/wn/{{weatherData.weather[0].icon}}.png" />
+    <span>
+      <p>{{toCelsius(weatherData.main.temp)}}°C</p>
+      <p class="description">{{weatherData.weather[0].description}}</p>
+    </span>
+  </div>
+  <p>Wind speed: {{weatherData.wind.speed}} m/s</p>
+  <p>Humidity: {{weatherData.main.humidity}}%</p>
+</div>
+<div class="loader" *ngIf="!weatherData || isLoading">
+  <fa-icon class="fa-spin" [icon]="faSpinner"></fa-icon>
+</div>

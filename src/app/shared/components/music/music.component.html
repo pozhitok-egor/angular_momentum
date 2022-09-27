@@ -1,0 +1,26 @@
+<div class="controls">
+  <div class="time">
+    {{state?.readableCurrentTime || "00:00"}}
+  </div>
+  <div class="music-btn" (click)="previousTrack()">
+    <fa-icon [icon]="faBackwardFast"></fa-icon>
+  </div>
+  <div class="music-btn large" *ngIf="state?.playing" (click)="pause()">
+    <fa-icon [icon]="faCirclePause"></fa-icon>
+  </div>
+  <div class="music-btn large" *ngIf="!state?.playing" (click)="play()">
+    <fa-icon [icon]="faCirclePlay"></fa-icon>
+  </div>
+  <div class="music-btn" (click)="nextTrack()">
+    <fa-icon [icon]="faForwardFast"></fa-icon>
+  </div>
+  <div class="time">
+    {{state?.readableDuration || "00:00"}}
+  </div>
+</div>
+<div class="track-list">
+  <div class="track" *ngFor="let track of tracks; let i = index" (click)="play(i)">
+    <fa-icon [icon]="faCirclePlay" on></fa-icon>
+    {{track.artist}} - {{track.title}}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.quote {
+  position: relative;
+  text-align: center;
+  max-width: 32rem;
+  &::before, &::after {
+    position: absolute;
+    font-size: 1.5em;
+  }
+  &::before {
+    top: -16px;
+    left: -13px;
+    content: "❝";
+  }
+  &::after {
+    bottom: -15px;
+    right: -13px;
+    content: "❞";
+  }
+}
+
+.author {
+  text-align: right;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.quotes {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  transition: opacity .5s ease-in-out;
+  &.loading {
+    opacity: 0;
+  }
+}
