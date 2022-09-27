@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IWeatherData } from 'src/app/interfaces/IWeatherData';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-weather',
@@ -31,7 +32,7 @@ export class WeatherComponent implements OnInit {
 
   private getCityWeather(city: string) {
     this.isLoading = true;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4dc23877eb7f44ef030e79b174670df2`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${environment.weatherAPIKey}`)
     .then((res) => res.json())
     .then(res => {
       this.isLoading = false;
