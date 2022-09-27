@@ -28,7 +28,6 @@ export class MusicComponent implements OnInit {
   constructor(private audioService: AudioService) { }
 
   play(selected?: number) {
-    console.log(this.currentTrack);
     if (selected !== undefined) {
       this.currentTrack = selected;
       this.audioService.playStream(this.tracks[this.currentTrack].url).subscribe();
