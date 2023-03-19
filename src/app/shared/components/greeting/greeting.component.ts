@@ -15,13 +15,11 @@ export class GreetingComponent implements OnInit {
   }
 
   changeName(event: Event) {
-    console.log('changeName');
     this.name = (event.target as HTMLInputElement).value;
     localStorage.setItem('name', this.name);
   }
 
   changeSize(event: Event) {
-    console.log('changeSize');
     (event.target as HTMLInputElement).style.width =
       this.name.length > 0 ? this.name.length + 'ch' : '12ch';
   }
@@ -46,7 +44,6 @@ export class GreetingComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     const previousHour = new Date(changes['now'].previousValue).getHours();
     const currentHour = new Date(changes['now'].currentValue).getHours();
-    console.log(new Date(changes['now'].previousValue).getHours(), new Date(changes['now'].currentValue).getHours());
     if(previousHour !== currentHour) {
       this.setGreeting(currentHour);
     }
